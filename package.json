@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "fork-ts-checker-webpack-plugin": "^9.1.0",
+    "html-webpack-plugin": "^5.6.3",
     "webpack-cli": "^6.0.1"
   }
 }
