@@ -1,23 +1,22 @@
+/// <reference path="./Teacher.ts" />
+
 namespace Subjects {
-    export interface Teacher {
-        firstName: string;
-        lastName: string;
-        experienceTeachingC?: number;
-        experienceTeachingReact?: number;
-        experienceTeachingJava?: number;
+  export class Java {
+    teacher: Teacher;
+
+    setTeacher(teacher: Teacher): void {
+      this.teacher = teacher;
     }
 
-    export class Java {
-        getRequirements(): string {
-            return 'Here is the list of requirements for Java';
-        }
-
-        getAvailableTeacher(teacher: Teacher): string {
-            if (teacher.experienceTeachingJava && teacher.experienceTeachingJava > 0) {
-                return `Available Teacher: ${teacher.firstName}`;
-            } else {
-                return 'No available teacher';
-            }
-        }
+    getRequirements(): string {
+      return 'Here is the list of requirements for Java';
     }
+
+    getAvailableTeacher(): string {
+      if (this.teacher && this.teacher.experienceTeachingJava && this.teacher.experienceTeachingJava > 0) {
+        return `Available Teacher: ${this.teacher.firstName}`;
+      }
+      return 'No available teacher';
+    }
+  }
 }
